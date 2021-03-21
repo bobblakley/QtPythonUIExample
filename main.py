@@ -12,6 +12,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.CustomInitialization()
 
+    # Do the custom initialization for the GUI.
     def CustomInitialization(self):
         QObject.connect(self.ui.findButton, SIGNAL("clicked()"), self.find_clicked)
         self.loadTextFile()
