@@ -23,8 +23,12 @@ top_users = sorted(todos_by_user.items(),
                    key=lambda x: x[1], reverse=True)
 
 # Get the maximum number of complete TODOs.
-max_complete = top_users[0][1]
-print("The type of max_complete is: ", type(max_complete))
+
+# This is a sneaky syntax shortcut, it means: from list entry 0's tuple take the 2nd item in the tuple
+# [(5, 12), (10, 12), (1, 11), (8, 11), (7, 9), (2, 8), (9, 8), (3, 7), (4, 6), (6, 6)]
+# i.e. (5, 12),  return 12!
+max_complete = top_users[0][1] 
+print("The maximum number of completions are: ", max_complete)
 
 # Create a list of all users who have completed
 # the maximum number of TODOs.
@@ -35,3 +39,4 @@ for user, num_complete in top_users:
     users.append(str(user))
 
 max_users = " and ".join(users)
+print("The ID(s) of the Max Users are: ", max_users)
